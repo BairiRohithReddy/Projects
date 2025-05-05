@@ -8,14 +8,14 @@ def get_hash(text):
 def username_exists(username):
     hash_key = get_hash(username)
 
-    # 1️⃣ Check cache first
+    # Check cache first
     cached_status = check_cache(hash_key)
     if cached_status == "taken":
         return True
     elif cached_status == "available":
         return False
 
-    # 2️⃣ If not in cache → check DB
+    # If not in cache → check DB
     user = get_user_by_hash(hash_key)
     if user:
         update_cache(hash_key, "taken")
