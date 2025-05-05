@@ -1,4 +1,3 @@
-````markdown
 # Streamlit Username Validation and Login System
 
 ## 📝 **Project Overview**
@@ -14,8 +13,6 @@ This project demonstrates a **small-scale implementation of that core functional
 ✅ Registration of new users with password hashing  
 ✅ Login functionality  
 ✅ Simple database-backed authentication
-
----
 
 ## 💡 **Why is this a problem?**
 
@@ -34,7 +31,6 @@ Big platforms often implement this using:
 - **Database constraints** to enforce uniqueness at storage level
 - **Rate-limiting** & **throttling** on username validation APIs
 
----
 
 ## 🎯 **How this project addresses the problem (small scale):**
 
@@ -48,7 +44,6 @@ In this project:
 - We don't use caching/Redis → we query SQLite directly
 - We check username availability **on field submission** (Streamlit doesn’t support keystroke-level validation without custom components)
 
----
 
 ## 🚀 **How this would scale to production:**
 
@@ -64,7 +59,6 @@ To handle large-scale username validation:
 This app is a **prototype** showing how the validation workflow works at a basic level,  
 but can be scaled with additional infrastructure to handle thousands or millions of users.
 
----
 
 ## 🛠️ **Tech Stack**
 
@@ -75,7 +69,6 @@ but can be scaled with additional infrastructure to handle thousands or millions
 | **Python**       | Backend programming language                      |
 | **hashlib**      | Used for password hashing (SHA-256)               |
 
----
 
 ## 🧩 **System Components**
 
@@ -88,7 +81,6 @@ but can be scaled with additional infrastructure to handle thousands or millions
   - Validating input
   - Providing feedback
 
----
 
 ### 2️⃣ `db_utils.py`
 
@@ -97,7 +89,6 @@ but can be scaled with additional infrastructure to handle thousands or millions
   - Querying for username
   - Inserting new user records
 
----
 
 ### 3️⃣ `auth_utils.py`
 
@@ -106,7 +97,6 @@ but can be scaled with additional infrastructure to handle thousands or millions
   - Validating if username exists
   - Validating login credentials
 
----
 
 ## 📝 **How to Run Locally**
 
@@ -139,7 +129,6 @@ streamlit run app.py
 
 App will open in your browser at `http://localhost:8501`
 
----
 
 ## 🌍 **Potential Use Cases**
 
@@ -147,7 +136,6 @@ App will open in your browser at `http://localhost:8501`
 ✅ Account creation forms
 ✅ Any system requiring **unique user IDs or handles**
 
----
 
 ## ✨ **Key Takeaways**
 
@@ -158,15 +146,13 @@ This project:
 * Demonstrates registration/login flow in a simple web app
 * Acts as a foundation for scaling username validation logic
 
----
 
-## 🚩 **Limitations**
+## **Limitations**
 
 * Validation feedback occurs only after ENTER or input focus-out (Streamlit limitation without JS/Custom Components)
 * Does not use Redis caching → queries DB directly every time
 * Password hashing uses SHA-256 instead of stronger `bcrypt`/`argon2`
 
----
 
 ## 📈 **Next Steps for Scaling**
 
@@ -176,16 +162,12 @@ This project:
 ✅ Use stronger password hashing algorithms (`bcrypt`, `argon2`)
 ✅ Add session persistence and user-specific dashboards
 
----
 
 ## 👨‍💻 **Author**
 
 Made by [Bairi Rohith Reddy](https://github.com/BairiRohithReddy)
 
----
 
 *This repository serves as an educational and proof-of-concept implementation of username validation and authentication workflows.*
 
 ```
-
----
